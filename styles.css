@@ -228,8 +228,8 @@ textarea:focus-visible {
 .site-nav a {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
-  padding: 0.35rem 0.7rem;
+  min-height: 44px;
+  padding: 0.4rem 0.75rem;
   border-radius: var(--radius-sm);
   color: var(--ink-secondary);
   font-size: 0.92rem;
@@ -369,11 +369,16 @@ article[id] {
   color: var(--ink);
 }
 
-.entry-header .meta {
+.entry-header .meta,
+.entry > .meta {
   margin: 0;
   color: var(--muted);
   font-size: 0.88rem;
   line-height: 1.45;
+}
+
+.entry > .meta {
+  margin-bottom: 0.65rem;
 }
 
 .entry-header .meta-teammates {
@@ -391,8 +396,9 @@ article[id] {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin: 0;
-  padding: 0.15rem 0;
+  margin: -0.25rem 0;
+  padding: 0.4rem 0;
+  min-height: 44px;
   border: none;
   background: transparent;
   color: inherit;
@@ -586,6 +592,24 @@ article[id] {
   margin-top: 0.75rem !important;
 }
 
+.course-list[hidden],
+.trip-list[hidden] {
+  display: none;
+}
+
+.course-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.course-group h4 {
+  margin: 0 0 0.45rem;
+  font-size: 0.96rem;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+
 /* Collapsible Sections (<details>) */
 .expand-section,
 .project-details {
@@ -708,8 +732,8 @@ article[id] {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  min-height: 36px;
-  padding: 0.3rem 0.75rem;
+  min-height: 44px;
+  padding: 0.35rem 0.8rem;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
   background: var(--surface-subtle);

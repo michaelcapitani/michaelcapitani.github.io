@@ -54,7 +54,7 @@
   </script>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -121,37 +121,58 @@
       <!-- Coursework -->
       <div id="coursework" class="subsection">
         <h3 class="heading-toggle-wrap">
-          <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="coursework-more">
+          <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="coursework-more" data-swap-target="coursework-summary">
             <span>Coursework</span>
-            <span class="expand-hint" data-closed="4 of 20" data-open="All 20">4 of 20</span>
+            <span class="expand-hint" data-closed="4 of 24" data-open="All 24">4 of 24</span>
           </button>
         </h3>
         <div class="entry coursework-card">
-          <ul class="course-list">
+          <ul id="coursework-summary" class="course-list">
             <li><strong>EECS 427</strong> — VLSI Design I</li>
             <li><strong>EECS 414</strong> — Introduction to MEMS</li>
             <li><strong>EECS 373</strong> — Introduction to Embedded System Design</li>
             <li><strong>EECS 311</strong> — Analog Circuits</li>
           </ul>
-          <div id="coursework-more" class="expand-panel" hidden>
-            <ul class="course-list course-list-more">
-              <li><strong>EECS 423</strong> — Micro/Nano Device Fabrication and Characterization</li>
-              <li><strong>EECS 370</strong> — Introduction to Computer Architecture</li>
-              <li><strong>EECS 312</strong> — Digital Integrated Circuits</li>
-              <li><strong>EECS 301</strong> — Probabilistic Methods in Engineering</li>
-              <li><strong>EECS 281</strong> — Data Structures and Algorithms</li>
-              <li><strong>EECS 280</strong> — Programming and Introductory Data Structures</li>
-              <li><strong>EECS 270</strong> — Introduction to Logic Design</li>
-              <li><strong>EECS 216</strong> — Introduction to Signals and Systems</li>
-              <li><strong>EECS 215</strong> — Introduction to Electronic Circuits</li>
-              <li><strong>EECS 203</strong> — Discrete Mathematics</li>
-              <li><strong>ROB 415</strong> — Robot Control</li>
-              <li><strong>ROB 311</strong> — How to Build Robots and Make Them Move</li>
-              <li><strong>ROB 310</strong> — Robot Sensors and Signals</li>
-              <li><strong>ROB 101</strong> — Computational Linear Algebra</li>
-              <li><strong>ENTR 408</strong> — Patent Law</li>
-              <li><strong>ENTR 407</strong> — Entrepreneurship Hour</li>
-            </ul>
+          <div id="coursework-more" class="expand-panel course-groups" hidden>
+            <div class="course-group">
+              <h4>Planned Coursework</h4>
+              <ul class="course-list">
+                <li><strong>EECS 627</strong> — VLSI Design II</li>
+                <li><strong>EECS 598</strong> — Chip Tapeout</li>
+                <li><strong>EECS 478</strong> — Logic Circuit Synthesis &amp; Optimization</li>
+                <li><strong>ECE 515</strong> — Integrated Microsystems</li>
+              </ul>
+            </div>
+            <div class="course-group">
+              <h4>Current Coursework</h4>
+              <ul class="course-list">
+                <li><strong>EECS 427</strong> — VLSI Design I</li>
+                <li><strong>EECS 423</strong> — Micro/Nano Device Fabrication and Characterization</li>
+                <li><strong>EECS 414</strong> — Introduction to MEMS</li>
+                <li><strong>ENTR 408</strong> — Patent Law</li>
+                <li><strong>ENTR 407</strong> — Entrepreneurship Hour</li>
+              </ul>
+            </div>
+            <div class="course-group">
+              <h4>Past Relevant Coursework</h4>
+              <ul class="course-list">
+                <li><strong>EECS 373</strong> — Introduction to Embedded System Design</li>
+                <li><strong>EECS 370</strong> — Introduction to Computer Architecture</li>
+                <li><strong>EECS 312</strong> — Digital Integrated Circuits</li>
+                <li><strong>EECS 311</strong> — Analog Circuits</li>
+                <li><strong>EECS 301</strong> — Probabilistic Methods in Engineering</li>
+                <li><strong>EECS 281</strong> — Data Structures and Algorithms</li>
+                <li><strong>EECS 280</strong> — Programming and Introductory Data Structures</li>
+                <li><strong>EECS 270</strong> — Introduction to Logic Design</li>
+                <li><strong>EECS 216</strong> — Introduction to Signals and Systems</li>
+                <li><strong>EECS 215</strong> — Introduction to Electronic Circuits</li>
+                <li><strong>EECS 203</strong> — Discrete Mathematics</li>
+                <li><strong>ROB 415</strong> — Robot Control</li>
+                <li><strong>ROB 311</strong> — How to Build Robots and Make Them Move</li>
+                <li><strong>ROB 310</strong> — Robot Sensors and Signals</li>
+                <li><strong>ROB 101</strong> — Computational Linear Algebra</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -451,20 +472,6 @@
               </div>
             </div>
           </article>
-
-          <article class="project-card" id="project-breadboard-computer">
-            <div class="entry-header">
-              <h4>8-Bit Breadboard Computer</h4>
-              <p class="meta">Personal Project · In Progress</p>
-            </div>
-            <p>On the side, I'm building Ben Eater's 8-bit breadboard computer from scratch out of 74LS-series logic ICs to get hands-on with how a CPU works down at the wire and gate level. So far I've wired up the 555-timer clock module, registers, and ALU on breadboards.</p>
-            <div class="media-gallery">
-              <figure class="media-item media-contain">
-                <img src="assets/media/projects/breadboard-computer/breadboards.webp" alt="Overhead view of wired 8-bit breadboard computer modules including the clock, registers, and ALU" width="1050" height="1400" loading="lazy" />
-                <figcaption>Clock module, registers, and ALU wired on breadboards</figcaption>
-              </figure>
-            </div>
-          </article>
         </div>
       </div>
 
@@ -616,9 +623,44 @@
     <section id="personal" class="section">
       <h2>Personal</h2>
 
+      <div id="interests" class="subsection">
+        <h3 class="heading-toggle-wrap">
+          <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="interests-list">
+            <span>Interests</span>
+          </button>
+        </h3>
+        <ul id="interests-list" class="trip-list" hidden>
+          <li>Cooking</li>
+          <li>Rock Climbing</li>
+          <li>Garfield</li>
+        </ul>
+      </div>
+
+      <div id="project-breadboard-computer" class="subsection">
+        <h3 class="heading-toggle-wrap">
+          <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="breadboard-computer-body">
+            <span>8-Bit Breadboard Computer</span>
+          </button>
+        </h3>
+        <article id="breadboard-computer-body" class="entry expand-panel" hidden>
+          <p class="meta">Personal Project · In Progress</p>
+          <p>On the side, I'm building Ben Eater's 8-bit breadboard computer from scratch out of 74LS-series logic ICs to get hands-on with how a CPU works down at the wire and gate level. So far I've wired up the 555-timer clock module, registers, and ALU on breadboards.</p>
+          <div class="media-gallery">
+            <figure class="media-item media-contain">
+              <img src="assets/media/projects/breadboard-computer/breadboards.webp" alt="Overhead view of wired 8-bit breadboard computer modules including the clock, registers, and ALU" width="1050" height="1400" loading="lazy" />
+              <figcaption>Clock module, registers, and ALU wired on breadboards</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+
       <div id="recent-trips" class="subsection">
-        <h3>Recent Trips</h3>
-        <ul class="trip-list">
+        <h3 class="heading-toggle-wrap">
+          <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="recent-trips-list">
+            <span>Recent Trips</span>
+          </button>
+        </h3>
+        <ul id="recent-trips-list" class="trip-list" hidden>
           <li><strong>Oct. 2026</strong> — Tucson, Arizona (2026 TBP National Convention)</li>
           <li><strong>Oct. 2026</strong> — Mackinac Island, Michigan</li>
           <li><strong>Aug. 2026</strong> — Traverse City, Michigan</li>
@@ -627,14 +669,7 @@
           <li><strong>Mar. 2026</strong> — Grand Cayman, Cayman Islands</li>
           <li><strong>Nov. 2025</strong> — Albuquerque, New Mexico (2025 TBP National Convention)</li>
         </ul>
-        <!--
-        <div class="media-placeholder" aria-label="Future trip photos placeholder">
-          Optional trip photos — add images in <code>assets/media/personal/trips/</code>
-        </div>
-        -->
       </div>
-
-      <!-- Room for additional personal subsections later -->
     </section>
 
     <!-- ==================== CONTACT ==================== -->
@@ -694,8 +729,8 @@
     </div>
   </dialog>
 
-  <script src="contact.js" defer></script>
-  <script src="expand.js" defer></script>
-  <script src="lightbox.js" defer></script>
+  <script src="contact.js?v=2" defer></script>
+  <script src="expand.js?v=2" defer></script>
+  <script src="lightbox.js?v=2" defer></script>
 </body>
 </html>

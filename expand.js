@@ -4,6 +4,8 @@
     const target = targetId ? document.getElementById(targetId) : null;
     if (!target) return;
 
+    const swapId = button.dataset.swapTarget;
+    const swapTarget = swapId ? document.getElementById(swapId) : null;
     const hint = button.querySelector(".expand-hint[data-open][data-closed]");
 
     button.addEventListener("click", () => {
@@ -11,6 +13,9 @@
       const next = !isExpanded;
       button.setAttribute("aria-expanded", String(next));
       target.hidden = !next;
+      if (swapTarget) {
+        swapTarget.hidden = next;
+      }
       if (hint) {
         hint.textContent = next ? hint.dataset.open : hint.dataset.closed;
       }
