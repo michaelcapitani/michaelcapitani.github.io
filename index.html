@@ -14,9 +14,14 @@
   <meta property="og:title" content="Michael Capitani — Computer Engineering, University of Michigan" />
   <meta property="og:description" content="Michael Capitani is a Computer Engineering student at the University of Michigan working on VLSI chip design, silicon test, and hands-on hardware systems." />
   <meta property="og:url" content="https://michaelcapitani.github.io/" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://michaelcapitani.github.io/assets/media/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Michael Capitani — Computer Engineering, University of Michigan" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Michael Capitani — Computer Engineering, University of Michigan" />
   <meta name="twitter:description" content="Michael Capitani is a Computer Engineering student at the University of Michigan working on VLSI chip design, silicon test, and hands-on hardware systems." />
+  <meta name="twitter:image" content="https://michaelcapitani.github.io/assets/media/og-image.jpg" />
 
   <!-- Structured Data (Person) -->
   <script type="application/ld+json">
@@ -25,6 +30,7 @@
       "@type": "Person",
       "name": "Michael Capitani",
       "url": "https://michaelcapitani.github.io/",
+      "image": "https://michaelcapitani.github.io/assets/media/profile/headshot.webp",
       "sameAs": [
         "https://www.linkedin.com/in/michael-capitani"
       ],
@@ -51,29 +57,38 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <header id="top" class="site-header">
     <div class="container">
-      <h1>Michael Capitani</h1>
-      <p class="intro">I'm a Computer Engineering student at the University of Michigan planning to stay for an MSE in ECE. I enjoy working on chip design, silicon test, and hands-on hardware systems.</p>
+      <div class="header-hero">
+        <img class="header-avatar" src="assets/media/profile/headshot.webp" alt="Portrait of Michael Capitani" width="600" height="900" fetchpriority="high" />
+        <div class="header-intro-block">
+          <h1>Michael Capitani</h1>
+          <p class="intro">I'm a Computer Engineering student at the University of Michigan planning to stay for an MSE in ECE. I enjoy working on chip design, silicon test, and hands-on hardware systems.</p>
 
-      <div class="header-actions">
-        <a class="button" href="#contact">Contact</a>
-        <a class="button" href="https://www.linkedin.com/in/michael-capitani" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <div class="header-actions">
+            <a class="button button-primary" href="#contact">Contact</a>
+            <a class="button" href="https://www.linkedin.com/in/michael-capitani" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
       </div>
-
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#background">Background</a>
-        <a href="#coursework">Coursework</a>
-        <a href="#experience">Experience</a>
-        <a href="#leadership">Leadership</a>
-        <a href="#projects">Projects</a>
-        <a href="#personal">Personal</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </div>
   </header>
 
-  <main class="container">
+  <nav class="site-nav-bar" aria-label="Primary navigation">
+    <div class="container site-nav">
+      <a href="#education">Education</a>
+      <a href="#coursework">Coursework</a>
+      <a href="#experience">Experience</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#projects">Projects</a>
+      <a href="#personal">Personal</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main id="main-content" class="container">
     <!-- ==================== BACKGROUND ==================== -->
     <section id="background" class="section">
       <h2>Background</h2>
@@ -82,8 +97,11 @@
       <div id="education" class="subsection">
         <h3>Education</h3>
         <article class="entry">
-          <div class="entry-header">
-            <h4>University of Michigan — Ann Arbor, MI</h4>
+          <div class="entry-header entry-header-with-logo">
+            <img class="org-logo" src="assets/media/logos/umich-seal.svg" alt="" width="56" height="56" loading="lazy" />
+            <div>
+              <h4>University of Michigan — Ann Arbor, MI</h4>
+            </div>
           </div>
           <ul>
             <li><strong>Intended MSE in Electrical and Computer Engineering</strong> — Expected Apr. 2029</li>
@@ -102,29 +120,40 @@
 
       <!-- Coursework -->
       <div id="coursework" class="subsection">
-        <h3>Coursework</h3>
-        <ul class="course-list">
-          <li><strong>EECS 427</strong> — VLSI Design I</li>
-          <li><strong>EECS 423</strong> — Micro/Nano Device Fabrication and Characterization</li>
-          <li><strong>EECS 414</strong> — Introduction to MEMS</li>
-          <li><strong>EECS 373</strong> — Introduction to Embedded System Design</li>
-          <li><strong>EECS 370</strong> — Introduction to Computer Architecture</li>
-          <li><strong>EECS 312</strong> — Digital Integrated Circuits</li>
-          <li><strong>EECS 311</strong> — Analog Circuits</li>
-          <li><strong>EECS 301</strong> — Probabilistic Methods in Engineering</li>
-          <li><strong>EECS 281</strong> — Data Structures and Algorithms</li>
-          <li><strong>EECS 280</strong> — Programming and Introductory Data Structures</li>
-          <li><strong>EECS 270</strong> — Introduction to Logic Design</li>
-          <li><strong>EECS 216</strong> — Introduction to Signals and Systems</li>
-          <li><strong>EECS 215</strong> — Introduction to Electronic Circuits</li>
-          <li><strong>EECS 203</strong> — Discrete Mathematics</li>
-          <li><strong>ROB 415</strong> — Robot Control</li>
-          <li><strong>ROB 311</strong> — How to Build Robots and Make Them Move</li>
-          <li><strong>ROB 310</strong> — Robot Sensors and Signals</li>
-          <li><strong>ROB 101</strong> — Computational Linear Algebra</li>
-          <li><strong>ENTR 408</strong> — Patent Law</li>
-          <li><strong>ENTR 407</strong> — Entrepreneurship Hour</li>
-        </ul>
+        <h3 class="heading-toggle-wrap">
+          <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="coursework-more">
+            <span>Coursework</span>
+            <span class="expand-hint" data-closed="4 of 20" data-open="All 20">4 of 20</span>
+          </button>
+        </h3>
+        <div class="entry coursework-card">
+          <ul class="course-list">
+            <li><strong>EECS 427</strong> — VLSI Design I</li>
+            <li><strong>EECS 414</strong> — Introduction to MEMS</li>
+            <li><strong>EECS 373</strong> — Introduction to Embedded System Design</li>
+            <li><strong>EECS 311</strong> — Analog Circuits</li>
+          </ul>
+          <div id="coursework-more" class="expand-panel" hidden>
+            <ul class="course-list course-list-more">
+              <li><strong>EECS 423</strong> — Micro/Nano Device Fabrication and Characterization</li>
+              <li><strong>EECS 370</strong> — Introduction to Computer Architecture</li>
+              <li><strong>EECS 312</strong> — Digital Integrated Circuits</li>
+              <li><strong>EECS 301</strong> — Probabilistic Methods in Engineering</li>
+              <li><strong>EECS 281</strong> — Data Structures and Algorithms</li>
+              <li><strong>EECS 280</strong> — Programming and Introductory Data Structures</li>
+              <li><strong>EECS 270</strong> — Introduction to Logic Design</li>
+              <li><strong>EECS 216</strong> — Introduction to Signals and Systems</li>
+              <li><strong>EECS 215</strong> — Introduction to Electronic Circuits</li>
+              <li><strong>EECS 203</strong> — Discrete Mathematics</li>
+              <li><strong>ROB 415</strong> — Robot Control</li>
+              <li><strong>ROB 311</strong> — How to Build Robots and Make Them Move</li>
+              <li><strong>ROB 310</strong> — Robot Sensors and Signals</li>
+              <li><strong>ROB 101</strong> — Computational Linear Algebra</li>
+              <li><strong>ENTR 408</strong> — Patent Law</li>
+              <li><strong>ENTR 407</strong> — Entrepreneurship Hour</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <!-- Work Experience -->
@@ -132,63 +161,89 @@
         <h3>Work Experience</h3>
 
         <article class="entry">
-          <div class="entry-header">
-            <h4>Texas Instruments, LOGIC Team — Test Intern</h4>
-            <p class="meta">Dallas, TX · May 2026 - Aug. 2026</p>
+          <div class="entry-header entry-header-with-logo">
+            <img class="org-logo" src="assets/media/logos/ti-red.webp" alt="" width="400" height="400" loading="lazy" />
+            <div class="entry-title-group">
+              <h4>Texas Instruments, LOGIC Team — Test Intern</h4>
+              <p class="meta">Dallas, TX · May 2026 - Aug. 2026</p>
+            </div>
           </div>
-          <!--
-          <div class="media-placeholder" aria-label="Future image placeholder">
-            Image placeholder — add photo in <code>assets/media/experience/</code>
-          </div>
-          -->
           <p>I interned on TI's LOGIC team, which develops standard CMOS logic gates and TI Programmable Logic Devices (TPLDs). I wrote and validated IG-XL test scripts on J750HD and ETS-88 automated test equipment, characterized packaged devices and cleanroom wafers, and analyzed yield and split-lot performance across temperatures.</p>
+          <div class="media-gallery">
+            <figure class="media-item media-wide">
+              <img src="assets/media/experience/texas-instruments/ti-hq-sign.webp" alt="Michael Capitani standing in front of the Texas Instruments sign in Dallas" width="1600" height="656" loading="lazy" />
+              <figcaption>Summer 2026 internship at Texas Instruments in Dallas</figcaption>
+            </figure>
+          </div>
         </article>
 
         <article class="entry">
-          <div class="entry-header">
-            <h4>University of Michigan — EECS 270 Instructor's Aide</h4>
-            <p class="meta">Introduction to Logic Design · Ann Arbor, MI · Jan. 2025 - Present</p>
+          <div class="entry-header entry-header-with-logo">
+            <img class="org-logo" src="assets/media/logos/ece-blue.webp" alt="" width="554" height="554" loading="lazy" />
+            <div class="entry-title-group">
+              <h4>University of Michigan — EECS 270 Instructor's Aide</h4>
+              <p class="meta">Introduction to Logic Design · Ann Arbor, MI · Jan. 2025 - Present</p>
+            </div>
           </div>
-          <!--
-          <div class="media-placeholder" aria-label="Future image placeholder">
-            Image placeholder — add photo in <code>assets/media/experience/</code>
-          </div>
-          -->
           <p>I run a weekly lab section and hold office hours for <a href="https://www.eecs270.org/" target="_blank" rel="noopener noreferrer">EECS 270</a>, helping students with digital logic and Verilog/FPGA debugging. Outside of lab, I built an attendance tracker used across all 9 lab sections and have spent two semesters writing interactive PrairieLearn practice problems.</p>
         </article>
 
-        <article class="entry">
-          <div class="entry-header">
-            <h4>Zoetic Robotics Lab (ZRL) — Research Assistant</h4>
-            <p class="meta">University of Michigan · Mar. 2025 - Dec. 2025</p>
-          </div>
-          <!--
-          <div class="media-placeholder" aria-label="Future image placeholder">
-            Image placeholder — add photo in <code>assets/media/experience/</code>
-          </div>
-          -->
-          <p>I worked under Professor Aubin from sophomore winter through junior fall, splitting my time between two projects. On the first, I characterized and explored new applications for the lab's combustion-actuated, insect-scale jumping robots, earning second place at the UM Robotics Research Symposium for a design-of-experiments study. On the second, I designed a custom PCB with a Bluetooth microcontroller and motor driver for a multi-terrain microrobot, picking up resin 3D printing and micro-scale fabrication along the way.</p>
-          <p class="doc-links"><a href="assets/docs/zrl-jumping-microrobots-poster.pdf" target="_blank" rel="noopener noreferrer">Symposium poster (PDF)</a></p>
-        </article>
+        <div class="expand-group-wrap">
+          <h4 class="past-exp-heading">
+            <button type="button" class="expand-trigger expand-trigger-card" aria-expanded="false" aria-controls="past-experience-more">
+              <span>Past Experience</span>
+              <span class="expand-hint">ZRL, ROB 101 IA, earlier internships</span>
+            </button>
+          </h4>
+          <div id="past-experience-more" class="expand-group-body" hidden>
+            <article class="entry">
+              <div class="entry-header entry-header-row">
+                <div class="entry-header-with-logo">
+                  <img class="org-logo org-logo-wide" src="assets/media/logos/zrl.webp" alt="" width="800" height="202" loading="lazy" />
+                  <div class="entry-title-group">
+                    <h4>Zoetic Robotics Lab (ZRL) — Research Assistant</h4>
+                    <p class="meta">University of Michigan · Mar. 2025 - Dec. 2025</p>
+                  </div>
+                </div>
+                <div class="doc-links">
+                  <a href="assets/docs/zrl-jumping-microrobots-poster.pdf" target="_blank" rel="noopener noreferrer">Poster (PDF)</a>
+                </div>
+              </div>
+              <p>I worked under Professor Aubin from sophomore winter through junior fall, splitting my time between two projects. On the first, I characterized and explored new applications for the lab's combustion-actuated, insect-scale jumping robots, earning second place at the UM Robotics Research Symposium for a design-of-experiments study. On the second, I designed a custom PCB with a Bluetooth microcontroller and motor driver for a multi-terrain microrobot, picking up resin 3D printing and micro-scale fabrication skills along the way.</p>
+              <div class="media-gallery">
+                <figure class="media-item">
+                  <img src="assets/media/experience/zoetic-robotics-lab/microrobot-pcb-soldering.webp" alt="Close-up of hand-soldered motor driver breakout board held between fingers" width="1050" height="1400" loading="lazy" />
+                  <figcaption>Micro-scale motor driver wiring for the multi-terrain microrobot</figcaption>
+                </figure>
+                <figure class="media-item">
+                  <img src="assets/media/experience/zoetic-robotics-lab/symposium-award-certificate.webp" alt="Second place Undergraduate Research Symposium Poster Winner certificate from Michigan Robotics" width="1400" height="1049" loading="lazy" />
+                  <figcaption>Second place at the 2025 Robotics Undergraduate Research Symposium</figcaption>
+                </figure>
+              </div>
+            </article>
 
-        <article class="entry">
-          <div class="entry-header">
-            <h4>University of Michigan — ROB 101 Instructor's Aide</h4>
-            <p class="meta">Computational Linear Algebra · Ann Arbor, MI · Aug. 2024 - May 2025</p>
-          </div>
-          <!--
-          <div class="media-placeholder" aria-label="Future image placeholder">
-            Image placeholder — add photo in <code>assets/media/experience/</code>
-          </div>
-          -->
-          <p>Before switching to EECS 270, I was an Instructor's Aide for ROB 101, holding office hours, grading assignments, and helping students work through in-class projects.</p>
-        </article>
+            <article class="entry">
+              <div class="entry-header">
+                <h4>University of Michigan — ROB 101 Instructor's Aide</h4>
+                <p class="meta">Computational Linear Algebra · Ann Arbor, MI · Aug. 2024 - May 2025</p>
+              </div>
+              <p>Before switching to EECS 270, I was an Instructor's Aide for ROB 101, holding office hours, grading assignments, and helping students work through in-class projects.</p>
+              <div class="media-gallery">
+                <figure class="media-item media-contain">
+                  <img src="assets/media/experience/rob-101-ia/rob101-cover.webp" alt="ROB 101 textbook cover featuring a 3D LiDAR point cloud from a course project" width="600" height="300" loading="lazy" />
+                  <figcaption>ROB 101 textbook cover showing a point cloud from one of the course projects</figcaption>
+                </figure>
+              </div>
+            </article>
 
-        <div class="previous-jobs">
-          <ul>
-            <li>Intern — Detroit Flex Defense (May 2023 - Aug. 2023)</li>
-            <li>Intern — CDA Engineering (June 2022 - Aug. 2022)</li>
-          </ul>
+            <div class="entry previous-jobs">
+              <h4>Earlier Internships</h4>
+              <ul>
+                <li>Detroit Flex Defense (May 2023 - Aug. 2023)</li>
+                <li>CDA Engineering (June 2022 - Aug. 2022)</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -197,23 +252,59 @@
         <h3>Leadership</h3>
 
         <article class="entry" id="leadership-ieee-hkn">
-          <div class="entry-header">
-            <h4>IEEE-HKN (EECS Honor Society)</h4>
-            <p class="meta">Advisor, President, Service Projects Officer · Sept. 2024 - Present</p>
+          <div class="entry-header entry-header-with-logo">
+            <img class="org-logo org-logo-tall" src="assets/media/logos/hkn-crest.webp" alt="" width="311" height="500" loading="lazy" />
+            <div class="entry-title-group">
+              <h4>
+                <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="hkn-more">
+                  <span>IEEE-HKN, Beta Epsilon Chapter (EECS Honor Society)</span>
+                </button>
+              </h4>
+              <p class="meta">Advisor, President, Service Projects Officer · Sept. 2024 - Present</p>
+            </div>
           </div>
-          <!--
-          <div class="media-placeholder" aria-label="Future image placeholder">
-            Optional image placeholder — add photo in <code>assets/media/leadership/ieee-hkn/</code>
-          </div>
-          -->
-          <p>I joined <a href="https://hkn.eecs.umich.edu/" target="_blank" rel="noopener noreferrer">Michigan's chapter of IEEE-HKN</a> in the fall of my sophomore year and have been on the officer board ever since, moving from Service Projects Officer to two terms as President and now Advisor. Over that time, I helped double chapter membership, revenue, and events year-over-year and worked with IEEE-HKN Nationals to host the 2025 HKN Student Leadership Conference.</p>
+          <p>I joined Michigan's Beta Epsilon Chapter of <a href="https://hkn.eecs.umich.edu/" target="_blank" rel="noopener noreferrer">IEEE-HKN</a> in the fall of my sophomore year and have been on the officer board ever since, moving from Service Projects Officer to two terms as President and now Advisor. Over that time, I helped double chapter membership, revenue, and events year-over-year and worked with IEEE-HKN Nationals to host the 2025 HKN Student Leadership Conference.</p>
 
-          <div class="role-details">
+          <div id="hkn-more" class="role-details expand-panel" hidden>
+            <div class="media-gallery">
+              <figure class="media-item">
+                <img src="assets/media/leadership/ieee-hkn/slc-michigan-stadium.webp" alt="Michael Capitani standing on the field at Michigan Stadium during the 2025 HKN Student Leadership Conference" width="1050" height="1400" loading="lazy" />
+                <figcaption>Michigan Stadium during the 2025 HKN Student Leadership Conference</figcaption>
+              </figure>
+              <figure class="media-item">
+                <img src="assets/media/leadership/ieee-hkn/slc-group-photo.webp" alt="Aerial group photo of over 450 attendees at the 2025 IEEE-HKN Student Leadership Conference in Ann Arbor" width="1600" height="1066" loading="lazy" />
+                <figcaption>2025 HKN Student Leadership Conference group photo</figcaption>
+              </figure>
+            </div>
+
             <h5>Advisor (Current)</h5>
             <p>I focus on improving chapter documentation and helping bring back the student-run dB Cafe.</p>
 
             <h5>President (2 Semesters)</h5>
             <p>I served as our chapter's main point of contact with IEEE-HKN Nationals to set up the 2025 HKN Student Leadership Conference for over 450 members from around the world. I also revived the HKN Student-Faculty Mixer, helped select the ECE and CSE HKN Professors of the Year, and worked to strengthen the chapter overall.</p>
+
+            <div class="media-gallery">
+              <figure class="media-item">
+                <img src="assets/media/leadership/ieee-hkn/key-chapter-award.webp" alt="Michael Capitani accepting the 2024-2025 IEEE-HKN Key Chapter Award with IEEE-HKN President Sean Bentley" width="1400" height="933" loading="lazy" />
+                <figcaption>2024-2025 IEEE-HKN Key Chapter Award with IEEE-HKN President Sean Bentley</figcaption>
+              </figure>
+              <figure class="media-item">
+                <img src="assets/media/leadership/ieee-hkn/outstanding-chapter-award.webp" alt="Michael Capitani holding the IEEE-HKN Beta Epsilon Outstanding Chapter Award plaque with ECE Department Chair Dennis Sylvester" width="1400" height="933" loading="lazy" />
+                <figcaption>IEEE-HKN Outstanding Chapter Award with ECE Department Chair Dennis Sylvester</figcaption>
+              </figure>
+              <figure class="media-item">
+                <img src="assets/media/leadership/ieee-hkn/ece-prof-of-the-year-2026.webp" alt="Presenting the 2026 HKN ECE Professor of the Year award to Professor David Wentzloff" width="1400" height="933" loading="lazy" />
+                <figcaption>2026 HKN ECE Professor of the Year (Prof. David Wentzloff)</figcaption>
+              </figure>
+              <figure class="media-item">
+                <img src="assets/media/leadership/ieee-hkn/cse-prof-of-the-year-2026.webp" alt="Presenting the 2026 HKN CSE Professor of the Year award to Professor Marcus Darden" width="1400" height="929" loading="lazy" />
+                <figcaption>2026 HKN CSE Professor of the Year (Prof. Marcus Darden)</figcaption>
+              </figure>
+              <figure class="media-item">
+                <img src="assets/media/leadership/ieee-hkn/hkn-crest-eecs.webp" alt="Brass IEEE-HKN Wheatstone bridge crest mounted above the entrance inside the EECS building" width="1400" height="1050" loading="lazy" />
+                <figcaption>HKN crest inside the EECS building</figcaption>
+              </figure>
+            </div>
 
             <h5>Service Projects Officer (1 Semester)</h5>
             <p>I restarted our regular volunteer visits to Sequoia Place senior assisted living, created an exam-week study social potluck, and organized community service events for members.</p>
@@ -221,23 +312,38 @@
         </article>
 
         <article class="entry" id="leadership-tau-beta-pi">
-          <div class="entry-header">
-            <h4>Tau Beta Pi (Engineering Honor Society)</h4>
-            <p class="meta">Professional Development Officer, External Vice President, Service Coordinator · Sept. 2024 - Present</p>
+          <div class="entry-header entry-header-with-logo">
+            <img class="org-logo org-logo-tall" src="assets/media/logos/tbp.webp" alt="" width="372" height="500" loading="lazy" />
+            <div class="entry-title-group">
+              <h4>
+                <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="tbp-more">
+                  <span>Tau Beta Pi, Michigan Gamma Chapter (Engineering Honor Society)</span>
+                </button>
+              </h4>
+              <p class="meta">Professional Development Officer, External Vice President, Service Coordinator, NEST Delegate · Sept. 2024 - Present</p>
+            </div>
           </div>
-          <!--
-          <div class="media-placeholder" aria-label="Future image placeholder">
-            Optional image placeholder — add photo in <code>assets/media/leadership/tau-beta-pi/</code>
-          </div>
-          -->
-          <p>Since initiating into <a href="https://tbp.engin.umich.edu/" target="_blank" rel="noopener noreferrer">Tau Beta Pi</a> in fall 2024, I have served on the officer board in roles covering service, external affairs, professional development, and engineering community engagement.</p>
+          <p>Since initiating into Michigan's Gamma Chapter of <a href="https://tbp.engin.umich.edu/" target="_blank" rel="noopener noreferrer">Tau Beta Pi</a> in fall 2024, I have served on the officer board in roles covering service, external affairs, professional development, and engineering community engagement.</p>
 
-          <div class="role-details">
+          <div id="tbp-more" class="role-details expand-panel" hidden>
             <h5>Professional Development Officer (Current)</h5>
             <p>I'm starting my role as Professional Development Officer, where I'll plan skills sessions, leadership workshops, and other member events.</p>
 
             <h5>External Vice President (2 Semesters)</h5>
             <p>I ran the <a href="https://studentawards.engin.umich.edu/" target="_blank" rel="noopener noreferrer">Student Leaders and Honors Awards</a>, organized two <a href="https://websites.umich.edu/~ooe/" target="_blank" rel="noopener noreferrer">Order of the Engineer</a> ceremonies for over 300 inductees total, and co-directed the <a href="https://www.fallcareerfair.org/" target="_blank" rel="noopener noreferrer">Fall Engineering Career Fair</a> alongside SWE.</p>
+            <div class="logo-row">
+              <img class="inline-badge logo-badge-dark" src="assets/media/logos/leaders-and-honors.webp" alt="Michigan Engineering Student Recognition — Student Leaders and Honors" width="800" height="111" loading="lazy" />
+              <img class="inline-badge" src="assets/media/logos/order-of-the-engineer.webp" alt="Order of the Engineer logo" width="421" height="212" loading="lazy" />
+              <img class="inline-badge" src="assets/media/logos/career-fair-wide.webp" alt="Fall Engineering Career Fair — Grow Your Future logo" width="800" height="550" loading="lazy" />
+            </div>
+
+            <div class="role-header-row">
+              <h5>NEST Delegate (2025)</h5>
+              <div class="doc-links">
+                <a href="assets/docs/tbp-nest-sunitize-poster.pdf" target="_blank" rel="noopener noreferrer">Poster (PDF)</a>
+              </div>
+            </div>
+            <p>I represented Michigan Gamma as a delegate in the New Engineering Solutions for Tomorrow (NEST) competition, where our team won second place at the 2025 TBP National Convention for SunItize, a rapid solar-powered UV-C water disinfector for energy-insecure households.</p>
 
             <h5>Service Coordinator (2 Semesters)</h5>
             <p>I resumed regular volunteering at Sequoia Place, added new service projects for the Ann Arbor Probility Marathon and Turkey Trot, and continued as a Cub Scouts Day Chair.</p>
@@ -248,18 +354,20 @@
         </article>
 
         <article class="entry" id="leadership-career-fair">
-          <div class="entry-header">
-            <h4>Fall Engineering Career Fair (TBP &amp; SWE)</h4>
-            <p class="meta">Director, Registration Committee Chair · Apr. 2025 - Nov. 2026</p>
+          <div class="entry-header entry-header-with-logo">
+            <img class="org-logo" src="assets/media/logos/career-fair.webp" alt="" width="385" height="600" loading="lazy" />
+            <div class="entry-title-group">
+              <h4>
+                <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="career-fair-more">
+                  <span>Fall Engineering Career Fair (TBP &amp; SWE)</span>
+                </button>
+              </h4>
+              <p class="meta">Director, Registration Committee Chair · Apr. 2025 - Nov. 2026</p>
+            </div>
           </div>
-          <!--
-          <div class="media-placeholder" aria-label="Future image placeholder">
-            Optional image placeholder — add photo in <code>assets/media/leadership/career-fair/</code>
-          </div>
-          -->
           <p>Tau Beta Pi and the Society of Women Engineers team up each fall to host the <a href="https://www.fallcareerfair.org/" target="_blank" rel="noopener noreferrer">Fall Engineering Career Fair</a>, bringing over 200 companies and 4,000 students to Michigan. I worked on two consecutive fairs, first as Registration Committee Chair and then as one of four student Directors.</p>
 
-          <div class="role-details">
+          <div id="career-fair-more" class="role-details expand-panel" hidden>
             <h5>Director (Nov. 2025 - Nov. 2026)</h5>
             <p>I was one of four student Directors for the 2026 fair, helping plan and run the event.</p>
 
@@ -280,38 +388,82 @@
 
         <div class="project-list">
           <article class="project-card" id="project-fpga-layout">
-            <div class="entry-header">
-              <h4>16-Bit RISC Processor &amp; Custom FPGA Layout (EECS 427)</h4>
-              <p class="meta">Sept. 2026 - Present · TSMC 65nm, Cadence Virtuoso</p>
+            <div class="entry-header entry-header-row">
+              <div class="entry-title-group">
+                <h4>
+                  <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="details-fpga-layout">
+                    <span>16-Bit RISC Processor &amp; Custom FPGA Layout (EECS 427)</span>
+                  </button>
+                </h4>
+                <p class="meta">Sept. 2026 - Present · TSMC 65nm, Cadence Virtuoso</p>
+                <p class="meta meta-teammates">Worked with Albert Chen, Keerthi Kumar, Joshua Lee, Samuel Pierce, Jeffery Wu</p>
+              </div>
             </div>
-            <!--
-            <div class="media-placeholder" aria-label="Future project media placeholder">
-              Media placeholder (image / GIF / video) — <code>assets/media/projects/fpga-layout/</code>
-            </div>
-            -->
             <p>Our team of six is designing a 16-bit pipelined RISC processor and a custom 4x4 island-style FPGA in Cadence Virtuoso using the TSMC 65nm PDK. They are planned as two separate chips with their own IO pads, with the processor controlling the FPGA through custom instructions.</p>
-            <details class="project-details">
-              <summary>Technical details</summary>
+            <div class="media-gallery">
+              <figure class="media-item media-contain">
+                <img src="assets/media/projects/fpga-layout/fpga-architecture.webp" alt="Block diagram of the custom 4x4 island-style FPGA architecture with switch blocks, connection blocks, CLBs, IO rings, and top-level configuration controller" width="1024" height="1023" loading="lazy" />
+                <figcaption>Custom 4x4 island-style FPGA architecture diagram</figcaption>
+              </figure>
+            </div>
+            <div id="details-fpga-layout" class="project-details-body expand-panel" hidden>
               <p>For the processor, we built a full-custom datapath (register file, 16-bit ALU, logarithmic shifter, and data memory) alongside a scannable program counter and controller synthesized and auto-placed-and-routed in Synopsys Design Compiler and Cadence Innovus. We verified the processor blocks with DRC, LVS, parasitic extraction, and post-layout simulation. For the second chip, we are building the FPGA out of 4-LUTs, 6T SRAM configuration cells, dedicated carry logic, switch and connection blocks, and an H-tree clock network.</p>
-            </details>
-            <p class="teammates"><strong>Worked with:</strong> Albert Chen, Keerthi Kumar, Joshua Lee, Samuel Pierce, Jeffery Wu</p>
+            </div>
           </article>
 
           <article class="project-card" id="project-wafer-fabrication">
-            <div class="entry-header">
-              <h4>Wafer Fabrication (EECS 423)</h4>
-              <p class="meta">Sept. 2026 - Present</p>
+            <div class="entry-header entry-header-row">
+              <div class="entry-title-group">
+                <h4>
+                  <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="details-wafer-fabrication">
+                    <span>Wafer Fabrication (EECS 423)</span>
+                  </button>
+                </h4>
+                <p class="meta">Sept. 2026 - Present</p>
+              </div>
             </div>
-            <!--
-            <div class="media-placeholder" aria-label="Future project media placeholder">
-              Media placeholder (image / GIF / video) — <code>assets/media/projects/wafer-fabrication/</code>
-            </div>
-            -->
             <p>In EECS 423, I worked in Michigan's Lurie Nanofabrication Facility (LNF) to take 100 mm silicon test wafers through the core front-end and back-end steps of a CMOS process, from furnace cleans and photolithography through etching and aluminum metallization.</p>
-            <details class="project-details">
-              <summary>Technical details</summary>
+            <div class="media-gallery">
+              <figure class="media-item">
+                <img src="assets/media/projects/wafer-fabrication/wafer-cleanroom-selfie.webp" alt="Michael Capitani in full cleanroom gown holding a patterned 100 mm silicon wafer in the LNF" width="900" height="1200" loading="lazy" />
+                <figcaption>In the LNF cleanroom with a patterned wafer</figcaption>
+              </figure>
+              <figure class="media-item">
+                <img src="assets/media/projects/wafer-fabrication/wafer-in-hand.webp" alt="Close-up of a patterned 100 mm silicon wafer held in a cleanroom glove" width="1050" height="1400" loading="lazy" />
+                <figcaption>Patterned 100 mm silicon test wafer</figcaption>
+              </figure>
+            </div>
+            <div id="details-wafer-fabrication" class="project-details-body expand-panel" hidden>
               <p>Starting with an RCA pre-furnace clean and rinse-spin-dry, I covered the thermal oxidation and LPCVD polysilicon workflow alongside thin-film metrology using Filmetrics reflectance and Woollam ellipsometry on dummy wafers. Next, I patterned the wafers with manual contact photolithography under yellow light (HMDS priming, spin-coated resist, Suss Contact Aligner UV exposure, and TMAH development) and inspected resist thickness and defects with a Dektak profilometer and Nikon microscope. To transfer those patterns, I ran an anisotropic RIE polysilicon etch on an STS Pegasus tool, stripped the remaining resist with oxygen plasma and NanoStrip, and wet-etched exposed oxide in buffered HF (BHF). For the final back-end steps, I thermally evaporated 2000 Å of aluminum, ran automated resist coating and development with aligned vernier contact lithography (measured within 1 µm), and wet-etched the aluminum interconnects.</p>
-            </details>
+              <div class="media-gallery">
+                <figure class="media-item">
+                  <img src="assets/media/projects/wafer-fabrication/wafer-on-bench.webp" alt="Patterned silicon wafer resting in a wafer carrier on a cleanroom bench" width="1050" height="1400" loading="lazy" />
+                  <figcaption>Wafer in carrier after patterning</figcaption>
+                </figure>
+                <figure class="media-item">
+                  <img src="assets/media/projects/wafer-fabrication/microscope-checkerboard.webp" alt="Nikon microscope inspection screen showing patterned checkerboard test structures on silicon" width="1050" height="1400" loading="lazy" />
+                  <figcaption>Nikon microscope inspection</figcaption>
+                </figure>
+                <figure class="media-item">
+                  <img src="assets/media/projects/wafer-fabrication/microscope-vernier.webp" alt="Nikon microscope screen showing aligned vernier lithography test marks" width="1050" height="1400" loading="lazy" />
+                  <figcaption>Vernier alignment inspection</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" id="project-breadboard-computer">
+            <div class="entry-header">
+              <h4>8-Bit Breadboard Computer</h4>
+              <p class="meta">Personal Project · In Progress</p>
+            </div>
+            <p>On the side, I'm building Ben Eater's 8-bit breadboard computer from scratch out of 74LS-series logic ICs to get hands-on with how a CPU works down at the wire and gate level. So far I've wired up the 555-timer clock module, registers, and ALU on breadboards.</p>
+            <div class="media-gallery">
+              <figure class="media-item media-contain">
+                <img src="assets/media/projects/breadboard-computer/breadboards.webp" alt="Overhead view of wired 8-bit breadboard computer modules including the clock, registers, and ALU" width="1050" height="1400" loading="lazy" />
+                <figcaption>Clock module, registers, and ALU wired on breadboards</figcaption>
+              </figure>
+            </div>
           </article>
         </div>
       </div>
@@ -322,97 +474,139 @@
 
         <div class="project-list">
           <article class="project-card" id="project-volumetric-display">
-            <div class="entry-header">
-              <h4>Volumetric Display (EECS 373)</h4>
-              <p class="meta">Jan. 2026 - May 2026</p>
+            <div class="entry-header entry-header-row">
+              <div class="entry-title-group">
+                <h4>
+                  <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="details-volumetric-display">
+                    <span>Volumetric Display (EECS 373)</span>
+                  </button>
+                </h4>
+                <p class="meta">Jan. 2026 - May 2026</p>
+                <p class="meta meta-teammates">Worked with Thomas Kennedy, Nathan Ondrus, Aiden Song</p>
+              </div>
+              <div class="doc-links">
+                <a href="assets/docs/eecs373-volumetric-display-poster.pdf" target="_blank" rel="noopener noreferrer">Poster (PDF)</a>
+              </div>
             </div>
-            <!--
-            <div class="media-placeholder" aria-label="Future project media placeholder">
-              Media placeholder (image / GIF / video) — <code>assets/media/projects/volumetric-display/</code>
-            </div>
-            -->
             <p>Our four-person team built a spinning persistence-of-vision (POV) 3D volumetric hologram display with a handheld wireless controller that tilts and updates the hologram in real time. I designed the 3D-printed rotor frame in Onshape to hold up at 400+ RPM, wrote the variable-speed brushless motor control firmware in C on STM32, and debugged the break-beam PID loop along with SPI and Bluetooth on the LED matrix PCB.</p>
-            <details class="project-details">
-              <summary>Technical details</summary>
+            <div class="media-gallery">
+              <figure class="media-item">
+                <img src="assets/media/projects/volumetric-display/led-matrix-lit.webp" alt="Custom 24x24 SK9822 LED matrix PCB lit up on the bench driven by an STM32 Nucleo board" width="1050" height="1400" loading="lazy" />
+                <figcaption>Bench bring-up of the custom 24x24 DotStar LED matrix PCB</figcaption>
+              </figure>
+              <figure class="media-item">
+                <img src="assets/media/projects/volumetric-display/single-led-probe.webp" alt="Macro shot probing a single SK9822 surface-mount LED on the matrix PCB" width="1400" height="1050" loading="lazy" />
+                <figcaption>Probing individual SK9822 LEDs during board debugging</figcaption>
+              </figure>
+            </div>
+            <div id="details-volumetric-display" class="project-details-body expand-panel" hidden>
               <p>On the display side, a custom, battery-powered 24x24 SK9822 DotStar LED matrix PCB sits inside the rotor frame spun by a 650KV brushless motor. An STM32WB55 drives the LEDs over dual SPI DMA channels above 8 MHz (double-buffered, under 0.5 ms per slice), while a second STM32 regulates speed via an optical break-beam PID loop (400+ RPM verified, targeting 900 RPM / 30 Hz). On the controller side, a custom handheld PCB with an STM32WB55, BMI323 IMU, rotary encoder, pushbuttons, and LCD sends orientation, file, and color updates over BLE using voxel slices generated from 3D models by a Blender script.</p>
-            </details>
-            <p class="teammates"><strong>Worked with:</strong> Thomas Kennedy, Nathan Ondrus, Aiden Song</p>
-            <p class="doc-links"><a href="assets/docs/eecs373-volumetric-display-poster.pdf" target="_blank" rel="noopener noreferrer">Project poster (PDF)</a></p>
+            </div>
           </article>
 
           <article class="project-card" id="project-ripple-carry-adder">
-            <div class="entry-header">
-              <h4>8-Bit Ripple-Carry Adder (EECS 312)</h4>
-              <p class="meta">Jan. 2026 - May 2026</p>
+            <div class="entry-header entry-header-row">
+              <div class="entry-title-group">
+                <h4>
+                  <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="details-ripple-carry-adder">
+                    <span>8-Bit Ripple-Carry Adder (EECS 312)</span>
+                  </button>
+                </h4>
+                <p class="meta">Jan. 2026 - May 2026</p>
+                <p class="meta meta-teammates">Worked with Albert Chen, Jeffrey Hung</p>
+              </div>
+              <div class="doc-links">
+                <a href="assets/docs/eecs312-ripple-carry-adder-report.pdf" target="_blank" rel="noopener noreferrer">Report (PDF)</a>
+              </div>
             </div>
-            <!--
-            <div class="media-placeholder" aria-label="Future project media placeholder">
-              Media placeholder (image / GIF / video) — <code>assets/media/projects/ripple-carry-adder/</code>
-            </div>
-            -->
             <p>With two teammates, I designed an 8-bit dual-mode ripple-carry adder and accumulator in 60nm static CMOS using Cadence Virtuoso at 1.2V, targeting 1.5 GHz operation. I focused on the synchronous reset scheme, using a single 145 nm pull-down NMOS in the master D-latch clock feedback path as a reset-controlled clock-gating element to avoid per-bit muxes and add zero critical-path delay, and handled the report and structural figures.</p>
-            <details class="project-details">
-              <summary>Technical details</summary>
+            <div id="details-ripple-carry-adder" class="project-details-body expand-panel" hidden>
               <p>We used an alternating-polarity mirror adder topology to propagate the carry across all eight stages without carry-chain inverters, and applied non-uniform transistor sizing between critical and non-critical paths. In simulation, the circuit draws 183.64 µW at 1.5 GHz (62.96 µW at 500 MHz, ~35.16 µW in the adder core) with a 27 ps setup time and 30.43 ps clock-to-Q delay.</p>
-            </details>
-            <p class="teammates"><strong>Worked with:</strong> Albert Chen, Jeffrey Hung</p>
-            <p class="doc-links"><a href="assets/docs/eecs312-ripple-carry-adder-report.pdf" target="_blank" rel="noopener noreferrer">Project report (PDF)</a></p>
+            </div>
           </article>
 
           <article class="project-card" id="project-bjt-amplifier">
-            <div class="entry-header">
-              <h4>3-Stage BJT Amplifier (EECS 311)</h4>
-              <p class="meta">Jan. 2026 - May 2026</p>
+            <div class="entry-header entry-header-row">
+              <div class="entry-title-group">
+                <h4>
+                  <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="details-bjt-amplifier">
+                    <span>3-Stage BJT Amplifier (EECS 311)</span>
+                  </button>
+                </h4>
+                <p class="meta">Jan. 2026 - May 2026</p>
+                <p class="meta meta-teammates">Worked with Brady Wasen</p>
+              </div>
+              <div class="doc-links">
+                <a href="assets/docs/eecs311-bjt-amplifier-report.pdf" target="_blank" rel="noopener noreferrer">Report (PDF)</a>
+              </div>
             </div>
-            <!--
-            <div class="media-placeholder" aria-label="Future project media placeholder">
-              Media placeholder (image / GIF / video) — <code>assets/media/projects/bjt-amplifier/</code>
-            </div>
-            -->
             <p>With a lab partner, I designed a three-stage 2N3904 NPN BJT amplifier on &plusmn;5 V rails by hand, simulated it in Cadence Virtuoso with an extracted SPICE model, and built and debugged it on a breadboard. The final circuit hit every spec on the bench, including 843 V/V midband gain and a 94.3 Hz to 26.5 kHz passband.</p>
-            <details class="project-details">
-              <summary>Technical details</summary>
+            <div id="details-bjt-amplifier" class="project-details-body expand-panel" hidden>
               <p>The circuit uses a degenerated common-emitter input stage (R<sub>E</sub> = 39 &Omega;), an undegenerated high-gain common-emitter second stage with a collector compensation capacitor (8.2 nF nominal, 11.5 nF measured) to set f<sub>H</sub>, and an emitter-follower output buffer. When Stage 1 picked up noise on the bench, we swapped input coupling capacitor C<sub>C1</sub> from 47 &mu;F down to 47 nF to fix the coupling while keeping f<sub>L</sub> in spec. Measured bench results: 843 V/V midband gain, 94.3 Hz to 26.5 kHz passband, 7.18 k&Omega; input and 45.0 &Omega; output impedance, 1.87 V<sub>pk-pk</sub> swing, and 54.2 mW power.</p>
-            </details>
-            <p class="teammates"><strong>Worked with:</strong> Brady Wasen</p>
-            <p class="doc-links"><a href="assets/docs/eecs311-bjt-amplifier-report.pdf" target="_blank" rel="noopener noreferrer">Lab report (PDF)</a></p>
+            </div>
           </article>
 
           <article class="project-card" id="project-ballbot-pid-control">
-            <div class="entry-header">
-              <h4>Ballbot PID Control (ROB 311)</h4>
-              <p class="meta">Sept. 2025 - Dec. 2025</p>
+            <div class="entry-header entry-header-row">
+              <div class="entry-title-group">
+                <h4>
+                  <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="details-ballbot-pid-control">
+                    <span>Ballbot PID Control (ROB 311)</span>
+                  </button>
+                </h4>
+                <p class="meta">Sept. 2025 - Dec. 2025</p>
+                <p class="meta meta-teammates">Worked with Mark Gibney</p>
+              </div>
             </div>
-            <!--
-            <div class="media-placeholder" aria-label="Future project media placeholder">
-              Media placeholder (image / GIF / video) — <code>assets/media/projects/ballbot-pid-control/</code>
-            </div>
-            -->
             <p>With a partner, I built and programmed a ballbot that balances and steers on a basketball using three omni-wheels and a Bluetooth PS4 controller. I wrote the 200 Hz upright balance and steering PID controllers, kinematics, odometry, and MATLAB sensor validation, and helped design the 3D-printed motor mounts and laser-cut base plate in Onshape.</p>
-            <details class="project-details">
-              <summary>Technical details</summary>
+            <div class="media-gallery">
+              <figure class="media-item">
+                <img src="assets/media/projects/ballbot-pid-control/ballbot.webp" alt="Assembled ROB 311 ballbot chassis with three 45-degree omni-wheels and laser-cut acrylic plates" width="1400" height="1278" loading="lazy" />
+                <figcaption>Assembled ballbot chassis with 3D-printed mounts</figcaption>
+              </figure>
+              <figure class="media-item">
+                <video controls muted playsinline preload="metadata" poster="assets/media/projects/ballbot-pid-control/ballbot.webp">
+                  <source src="assets/media/projects/ballbot-pid-control/ballbot-demo.mp4" type="video/mp4" />
+                </video>
+                <figcaption>Ballbot balancing demo</figcaption>
+              </figure>
+            </div>
+            <div id="details-ballbot-pid-control" class="project-details-body expand-panel" hidden>
               <p>Three 70:1 brushed DC motors with 64 CPR encoders drive 45-degree-tilted 96 mm omni-wheels. The robot runs 200 Hz Python control loops over LCM on a Raspberry Pi 4 paired with a custom Pico/MBot control board (BHI160B IMU). Across the lab sequence, I implemented 3-axis torque conversion, forward kinematics and odometry, and IMU-vs-encoder angular velocity validation in MATLAB before building the dual-loop balance and steering controller with a PS4 E-stop, IMU drift reset, deadzone, and live gain tuning and filtering.</p>
-            </details>
-            <p class="teammates"><strong>Worked with:</strong> Mark Gibney</p>
+            </div>
           </article>
 
           <article class="project-card" id="project-m-quadruped">
-            <div class="entry-header">
-              <h4>M-Quadruped (ROB 310)</h4>
-              <p class="meta">Jan. 2025 - Apr. 2025</p>
+            <div class="entry-header entry-header-row">
+              <div class="entry-title-group">
+                <h4>
+                  <button type="button" class="expand-trigger" aria-expanded="false" aria-controls="details-m-quadruped">
+                    <span>M-Quadruped (ROB 310)</span>
+                  </button>
+                </h4>
+                <p class="meta">Jan. 2025 - Apr. 2025</p>
+                <p class="meta meta-teammates">Worked with Nathan Gulliver, Nithin Reddy, Vitalij Volyanyuk</p>
+              </div>
+              <div class="doc-links">
+                <a href="assets/docs/rob310-m-quadruped-slides.pdf" target="_blank" rel="noopener noreferrer">Slides (PDF)</a>
+              </div>
             </div>
-            <!--
-            <div class="media-placeholder" aria-label="Future project media placeholder">
-              Media placeholder (image / GIF / video) — <code>assets/media/projects/m-quadruped/</code>
-            </div>
-            -->
             <p>Our four-person team redesigned Michigan's two-wheeled MBot platform into an eight-servo quadruped running an open-loop MicroPython gait on a Raspberry Pi and RP Pico. I helped design the custom EasyEDA power and PWM board, run the power and cost analysis, iterate on the 3D-printed legs, and test a working hybrid prototype.</p>
-            <details class="project-details">
-              <summary>Technical details</summary>
+            <div class="media-gallery">
+              <figure class="media-item">
+                <img src="assets/media/projects/m-quadruped/m-quadruped.webp" alt="M-Quadruped hybrid prototype with 3D-printed front legs, MG90S servos, laser-cut yellow plate, and rear wheel assembly" width="1400" height="1165" loading="lazy" />
+                <figcaption>Hybrid M-Quadruped prototype with 3D-printed front legs</figcaption>
+              </figure>
+              <figure class="media-item">
+                <video controls muted playsinline preload="metadata" poster="assets/media/projects/m-quadruped/m-quadruped.webp">
+                  <source src="assets/media/projects/m-quadruped/m-quadruped-demo.mp4" type="video/mp4" />
+                </video>
+                <figcaption>M-Quadruped gait demo</figcaption>
+              </figure>
+            </div>
+            <div id="details-m-quadruped" class="project-details-body expand-panel" hidden>
               <p>The custom EasyEDA PCB splits servo current across three parallel TI LMR51430 12V-to-5V 3A buck converters from the 12V MBot battery and drives eight MG90S servo headers over I2C (SDA/SCL/GND) via an NXP PCA9685 16-channel PWM controller, sized against our power and cost analyses (100-250 mA operating vs. ~800 mA stall per servo). We paired a laser-cut acrylic base plate with iterated 3D-printed legs (using rubber bands for traction) and verified the PCB, power budget, and MicroPython gait on a hybrid prototype with two actuated front legs and a rear wheel/differential assembly.</p>
-            </details>
-            <p class="teammates"><strong>Worked with:</strong> Nathan Gulliver, Nithin Reddy, Vitalij Volyanyuk</p>
-            <p class="doc-links"><a href="assets/docs/rob310-m-quadruped-slides.pdf" target="_blank" rel="noopener noreferrer">Project slides (PDF)</a></p>
+            </div>
           </article>
         </div>
       </div>
@@ -480,7 +674,7 @@
         <!-- Honeypot field for Web3Forms spam filtering -->
         <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-        <button id="contact-submit" type="submit" class="button">Send Message</button>
+        <button id="contact-submit" type="submit" class="button button-primary">Send Message</button>
         <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
@@ -492,6 +686,16 @@
     </div>
   </footer>
 
+  <dialog id="image-lightbox" class="lightbox" aria-label="Expanded image view">
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close" aria-label="Close image preview">&times;</button>
+      <img id="lightbox-img" src="" alt="" />
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </dialog>
+
   <script src="contact.js" defer></script>
+  <script src="expand.js" defer></script>
+  <script src="lightbox.js" defer></script>
 </body>
 </html>
