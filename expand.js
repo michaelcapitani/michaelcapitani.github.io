@@ -25,4 +25,14 @@
       hint.textContent = next ? hint.dataset.open : hint.dataset.closed;
     }
   });
+
+  const duckBtn = document.getElementById("duck-trigger");
+  const duckMsg = document.getElementById("duck-msg");
+  if (duckBtn && duckMsg) {
+    duckBtn.addEventListener("click", () => {
+      const next = duckMsg.hidden;
+      duckMsg.hidden = !next;
+      duckBtn.setAttribute("aria-expanded", String(next));
+    });
+  }
 })();

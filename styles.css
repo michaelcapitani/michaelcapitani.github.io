@@ -248,13 +248,20 @@ main:focus {
 }
 
 .site-header h1 {
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.25rem;
   font-family: var(--font-display);
   font-size: clamp(1.85rem, 4.2vw, 2.35rem);
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.025em;
   color: var(--ink);
+}
+
+.hero-nickname {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--muted);
 }
 
 .intro {
@@ -1241,4 +1248,57 @@ article[id] {
 
 .site-footer p {
   margin: 0;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.footer-duck-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.duck-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.42;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.duck-trigger:hover,
+.duck-trigger:focus-visible,
+.duck-trigger[aria-expanded="true"] {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.duck-trigger img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.duck-msg {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--tag-ink);
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.18rem 0.6rem;
+  white-space: nowrap;
 }

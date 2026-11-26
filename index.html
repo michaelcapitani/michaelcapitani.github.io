@@ -68,7 +68,7 @@
       if (t === "dark" || t === "light") document.documentElement.dataset.theme = t;
     } catch (e) {}
   </script>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -79,6 +79,7 @@
         <img class="header-avatar" src="assets/media/profile/headshot.webp" alt="Portrait of Michael Capitani" width="600" height="900" fetchpriority="high" />
         <div>
           <h1>Michael Capitani</h1>
+          <p class="hero-nickname">Most people call me Cap</p>
           <p class="intro">I'm a Computer Engineering student at the University of Michigan (BSE '27, staying for an MSE in ECE). I enjoy working on chip design, silicon test, and hands-on hardware systems.</p>
 
           <div class="header-actions">
@@ -200,6 +201,12 @@
                 <li><strong>ROB 101</strong> — Computational Linear Algebra</li>
               </ul>
             </div>
+            <div class="media-gallery">
+              <figure class="media-item media-contain">
+                <img src="assets/media/coursework/course-stickers.webp" alt="Collection of University of Michigan EECS and Robotics course stickers" width="1400" height="984" loading="lazy" decoding="async" />
+                <figcaption>Course stickers collected along the way</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </div>
@@ -221,6 +228,16 @@
             <figure class="media-item media-wide">
               <img src="assets/media/experience/texas-instruments/ti-hq-sign.webp" alt="Michael Capitani standing in front of the Texas Instruments sign in Dallas" width="1600" height="656" loading="lazy" decoding="async" />
               <figcaption>Summer 2026 internship at Texas Instruments in Dallas</figcaption>
+            </figure>
+          </div>
+          <div class="media-gallery">
+            <figure class="media-item">
+              <img src="assets/media/experience/texas-instruments/ti-monkey-desk.webp" alt="Texas Instruments sock monkey sitting at Michael's desk in front of a monitor and keyboard" width="1050" height="1400" loading="lazy" decoding="async" />
+              <figcaption>My TI monkey hard at work at my desk</figcaption>
+            </figure>
+            <figure class="media-item media-contain">
+              <img src="assets/media/experience/texas-instruments/ti-84-ceo-signed.webp" alt="Back of a blue TI-84 calculator signed in black marker by Texas Instruments CEO Haviv Ilan" width="1400" height="519" loading="lazy" decoding="async" />
+              <figcaption>My TI-84 signed by the CEO of TI</figcaption>
             </figure>
           </div>
         </article>
@@ -697,7 +714,7 @@
           <p>On the side, I'm building Ben Eater's 8-bit breadboard computer from scratch out of 74LS-series logic ICs to get hands-on with how a CPU works down at the wire and gate level. So far I've wired up the 555-timer clock module, registers, and ALU on breadboards.</p>
           <div class="media-gallery">
             <figure class="media-item media-contain">
-              <img src="assets/media/projects/breadboard-computer/breadboards.webp" alt="Overhead view of wired 8-bit breadboard computer modules including the clock, registers, and ALU" width="1050" height="1400" loading="lazy" decoding="async" />
+              <img src="assets/media/projects/breadboard-computer/breadboards.webp" alt="Overhead view of wired 8-bit breadboard computer modules including the clock, registers, and ALU" width="1400" height="1050" loading="lazy" decoding="async" />
               <figcaption>Clock module, registers, and ALU wired on breadboards</figcaption>
             </figure>
           </div>
@@ -759,8 +776,14 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-row">
       <p>&copy; 2026 Michael Capitani · <a href="#top">Back to top</a></p>
+      <div class="footer-duck-wrap">
+        <span id="duck-msg" class="duck-msg" role="status" aria-live="polite" hidden>I luv snacs</span>
+        <button type="button" id="duck-trigger" class="duck-trigger" aria-label="Tiny duck" aria-expanded="false">
+          <img src="assets/media/personal/duck.webp" alt="" width="160" height="160" loading="lazy" decoding="async" />
+        </button>
+      </div>
     </div>
   </footer>
 
@@ -774,7 +797,7 @@
 
   <script src="theme.js?v=3" defer></script>
   <script src="contact.js?v=3" defer></script>
-  <script src="expand.js?v=3" defer></script>
+  <script src="expand.js?v=4" defer></script>
   <script src="lightbox.js?v=3" defer></script>
 </body>
 </html>
