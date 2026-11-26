@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b111b" media="(prefers-color-scheme: dark)" />
+  <title>404 — Michael Capitani</title>
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" />
+
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "dark" || t === "light") document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="/styles.css?v=6" />
+</head>
+<body class="error-page">
+  <header class="error-topbar">
+    <div class="container error-topbar-inner">
+      <a class="error-brand" href="/">Michael Capitani</a>
+      <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode (D)">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="error-main">
+    <div class="container">
+      <div class="error-card">
+        <p class="error-code">404 · Hi-Z</p>
+        <h1>Floating pin.</h1>
+        <p>Nothing is connected at this address. Head back to the main page to see projects, coursework, and experience.</p>
+        <a class="button button-primary" href="/">Back to home</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="/theme.js?v=4" defer></script>
+</body>
+</html>

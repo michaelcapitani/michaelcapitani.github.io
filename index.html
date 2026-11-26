@@ -68,7 +68,7 @@
       if (t === "dark" || t === "light") document.documentElement.dataset.theme = t;
     } catch (e) {}
   </script>
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -104,7 +104,7 @@
           <a href="#contact">Contact</a>
         </div>
       </div>
-      <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+      <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode (D)">
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </svg>
@@ -114,6 +114,7 @@
         </svg>
       </button>
     </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
   </nav>
 
   <main id="main-content" class="container" tabindex="-1">
@@ -161,7 +162,7 @@
             <li><strong>EECS 373</strong> — Introduction to Embedded System Design</li>
             <li><strong>EECS 311</strong> — Analog Circuits</li>
           </ul>
-          <div id="coursework-more" class="expand-panel course-groups" hidden>
+          <div id="coursework-more" class="expand-panel course-groups" hidden="until-found">
             <div class="course-group">
               <h4>Planned Coursework</h4>
               <ul class="course-list">
@@ -230,7 +231,7 @@
               <figcaption>Summer 2026 internship at Texas Instruments in Dallas</figcaption>
             </figure>
           </div>
-          <div class="media-gallery">
+          <div class="media-gallery media-gallery-ti-pair">
             <figure class="media-item">
               <img src="assets/media/experience/texas-instruments/ti-monkey-desk.webp" alt="Texas Instruments sock monkey sitting at Michael's desk in front of a monitor and keyboard" width="1050" height="1400" loading="lazy" decoding="async" />
               <figcaption>My TI monkey hard at work at my desk</figcaption>
@@ -260,7 +261,7 @@
               <span class="expand-hint">Zoetic Robotics Lab, ROB 101 IA, earlier internships</span>
             </button>
           </h4>
-          <div id="past-experience-more" class="expand-group-body" hidden>
+          <div id="past-experience-more" class="expand-group-body" hidden="until-found">
             <article class="entry">
               <div class="entry-header entry-header-row">
                 <div class="entry-header-with-logo">
@@ -341,7 +342,7 @@
                 <figcaption>Custom 4x4 island-style FPGA architecture diagram</figcaption>
               </figure>
             </div>
-            <div id="details-fpga-layout" class="expand-panel" hidden>
+            <div id="details-fpga-layout" class="expand-panel" hidden="until-found">
               <p>For the processor, we built a full-custom datapath (register file, 16-bit ALU, logarithmic shifter, and data memory) alongside a scannable program counter and controller synthesized and auto-placed-and-routed in Synopsys Design Compiler and Cadence Innovus. We verified the processor blocks with DRC, LVS, parasitic extraction, and post-layout simulation. For the second chip, we are building the FPGA out of 4-LUTs, 6T SRAM configuration cells, dedicated carry logic, switch and connection blocks, and an H-tree clock network.</p>
             </div>
           </article>
@@ -368,7 +369,7 @@
                 <figcaption>Patterned 100 mm silicon test wafer</figcaption>
               </figure>
             </div>
-            <div id="details-wafer-fabrication" class="expand-panel" hidden>
+            <div id="details-wafer-fabrication" class="expand-panel" hidden="until-found">
               <p>Starting with an RCA pre-furnace clean and rinse-spin-dry, I covered the thermal oxidation and LPCVD polysilicon workflow alongside thin-film metrology using Filmetrics reflectance and Woollam ellipsometry on dummy wafers. Next, I patterned the wafers with manual contact photolithography under yellow light (HMDS priming, spin-coated resist, Suss Contact Aligner UV exposure, and TMAH development) and inspected resist thickness and defects with a Dektak profilometer and Nikon microscope.</p>
               <p>To transfer those patterns, I ran an anisotropic RIE polysilicon etch on an STS Pegasus tool, stripped the remaining resist with oxygen plasma and NanoStrip, and wet-etched exposed oxide in buffered HF (BHF). For the final back-end steps, I thermally evaporated 2000 &Aring; of aluminum, ran automated resist coating and development with aligned vernier contact lithography (measured within 1 &mu;m), and wet-etched the aluminum interconnects.</p>
               <div class="media-gallery">
@@ -421,7 +422,7 @@
                 <figcaption>Probing individual SK9822 LEDs during board debugging</figcaption>
               </figure>
             </div>
-            <div id="details-volumetric-display" class="expand-panel" hidden>
+            <div id="details-volumetric-display" class="expand-panel" hidden="until-found">
               <p>On the display side, a custom, battery-powered 24x24 SK9822 DotStar LED matrix PCB sits inside the rotor frame spun by a 650KV brushless motor. An STM32WB55 drives the LEDs over dual SPI DMA channels above 8 MHz (double-buffered, under 0.5 ms per slice), while a second STM32 regulates speed via an optical break-beam PID loop (400+ RPM verified, targeting 900 RPM / 30 Hz). On the controller side, a custom handheld PCB with an STM32WB55, BMI323 IMU, rotary encoder, pushbuttons, and LCD sends orientation, file, and color updates over BLE using voxel slices generated from 3D models by a Blender script.</p>
             </div>
           </article>
@@ -452,7 +453,7 @@
                 <figcaption>D-latch with and without synchronous reset pull-down NMOS</figcaption>
               </figure>
             </div>
-            <div id="details-ripple-carry-adder" class="expand-panel" hidden>
+            <div id="details-ripple-carry-adder" class="expand-panel" hidden="until-found">
               <p>We used an alternating-polarity mirror adder topology to propagate the carry across all eight stages without carry-chain inverters, and applied non-uniform transistor sizing between critical and non-critical paths. In simulation, the circuit draws 183.64 &mu;W at 1.5 GHz (62.96 &mu;W at 500 MHz, ~35.16 &mu;W in the adder core) with a 27 ps setup time and 30.43 ps clock-to-Q delay.</p>
             </div>
           </article>
@@ -483,7 +484,7 @@
                 <figcaption>Keysight bench capture showing 1.87 V<sub>pk-pk</sub> undistorted output at 1 kHz</figcaption>
               </figure>
             </div>
-            <div id="details-bjt-amplifier" class="expand-panel" hidden>
+            <div id="details-bjt-amplifier" class="expand-panel" hidden="until-found">
               <p>The circuit uses a degenerated common-emitter input stage (R<sub>E</sub> = 39 &Omega;), an undegenerated high-gain common-emitter second stage with a collector compensation capacitor (8.2 nF nominal, 11.5 nF measured) to set f<sub>H</sub>, and an emitter-follower output buffer. When Stage 1 picked up noise on the bench, we swapped input coupling capacitor C<sub>C1</sub> from 47 &mu;F down to 47 nF to fix the coupling while keeping f<sub>L</sub> in spec. Additional measured bench specs: 7.18 k&Omega; input and 45.0 &Omega; output impedance, 1.87 V<sub>pk-pk</sub> undistorted swing, and 54.2 mW total power.</p>
             </div>
           </article>
@@ -514,7 +515,7 @@
                 <figcaption id="ballbot-video-caption">Ballbot balancing demo</figcaption>
               </figure>
             </div>
-            <div id="details-ballbot-pid-control" class="expand-panel" hidden>
+            <div id="details-ballbot-pid-control" class="expand-panel" hidden="until-found">
               <p>Three 70:1 brushed DC motors with 64 CPR encoders drive 45-degree-tilted 96 mm omni-wheels. The robot runs 200 Hz Python control loops over LCM on a Raspberry Pi 4 paired with a custom Pico/MBot control board (BHI160B IMU). Across the lab sequence, I implemented 3-axis torque conversion, forward kinematics and odometry, and IMU-vs-encoder angular velocity validation in MATLAB before building the dual-loop balance and steering controller with a PS4 E-stop, IMU drift reset, deadzone, and live gain tuning and filtering.</p>
             </div>
           </article>
@@ -548,7 +549,7 @@
                 <figcaption id="quadruped-video-caption">M-Quadruped gait demo</figcaption>
               </figure>
             </div>
-            <div id="details-m-quadruped" class="expand-panel" hidden>
+            <div id="details-m-quadruped" class="expand-panel" hidden="until-found">
               <p>The custom EasyEDA PCB splits servo current across three parallel TI LMR51430 12 V-to-5 V 3 A buck converters powered by the 12 V MBot battery. It drives eight MG90S servo headers over I2C (SDA/SCL/GND) via an NXP PCA9685 16-channel PWM controller, sized against our power and cost analyses (100-250 mA operating vs. ~800 mA stall per servo). We paired a laser-cut acrylic base plate with iterated 3D-printed legs (using rubber bands for traction) and verified the PCB, power budget, and MicroPython gait on a hybrid prototype with two actuated front legs and a rear wheel/differential assembly.</p>
             </div>
           </article>
@@ -574,7 +575,7 @@
         </div>
         <p>I joined Michigan's Beta Epsilon Chapter of <a href="https://hkn.eecs.umich.edu/" target="_blank" rel="noopener noreferrer">IEEE-HKN</a> in the fall of my sophomore year and have been on the officer board ever since, moving from Service Projects Officer to two terms as President and now Advisor. Over that time, I helped double chapter membership, revenue, and events year-over-year and worked with IEEE-HKN Nationals to host the 2025 HKN Student Leadership Conference.</p>
 
-        <div id="hkn-more" class="role-details expand-panel" hidden>
+        <div id="hkn-more" class="role-details expand-panel" hidden="until-found">
           <div class="media-gallery">
             <figure class="media-item">
               <img src="assets/media/leadership/ieee-hkn/slc-michigan-stadium.webp" alt="Michael Capitani standing on the field at Michigan Stadium during the 2025 HKN Student Leadership Conference" width="1050" height="1400" loading="lazy" decoding="async" />
@@ -634,7 +635,7 @@
         </div>
         <p>I joined the Michigan Gamma chapter of <a href="https://tbp.engin.umich.edu/" target="_blank" rel="noopener noreferrer">Tau Beta Pi</a> in fall 2024 and have served on the officer board since, moving from Service Coordinator to External Vice President and now Professional Development Officer.</p>
 
-        <div id="tbp-more" class="role-details expand-panel" hidden>
+        <div id="tbp-more" class="role-details expand-panel" hidden="until-found">
           <h5>Professional Development Officer (Current)</h5>
           <p>As Professional Development Officer, I plan skills sessions, leadership workshops, and other member events.</p>
 
@@ -676,7 +677,7 @@
         </div>
         <p>Tau Beta Pi and the Society of Women Engineers team up each fall to host the <a href="https://www.fallcareerfair.org/" target="_blank" rel="noopener noreferrer">Fall Engineering Career Fair</a>, bringing over 200 companies and 4,000 students to Michigan. I worked on two consecutive fairs, first as Registration Committee Chair and then as one of four student Directors.</p>
 
-        <div id="career-fair-more" class="role-details expand-panel" hidden>
+        <div id="career-fair-more" class="role-details expand-panel" hidden="until-found">
           <h5>Director (Nov. 2025 - Nov. 2026)</h5>
           <p>I was one of four student Directors for the 2026 fair, helping plan and run the event.</p>
 
@@ -696,7 +697,7 @@
             <span>Interests</span>
           </button>
         </h3>
-        <ul id="interests-list" class="trip-list" hidden>
+        <ul id="interests-list" class="trip-list" hidden="until-found">
           <li>Cooking</li>
           <li>Rock Climbing</li>
           <li>Garfield</li>
@@ -709,7 +710,7 @@
             <span>8-Bit Breadboard Computer</span>
           </button>
         </h3>
-        <article id="breadboard-computer-body" class="entry expand-panel" hidden>
+        <article id="breadboard-computer-body" class="entry expand-panel" hidden="until-found">
           <p class="meta">Personal Project · In Progress</p>
           <p>On the side, I'm building Ben Eater's 8-bit breadboard computer from scratch out of 74LS-series logic ICs to get hands-on with how a CPU works down at the wire and gate level. So far I've wired up the 555-timer clock module, registers, and ALU on breadboards.</p>
           <div class="media-gallery">
@@ -727,7 +728,7 @@
             <span>Recent Trips</span>
           </button>
         </h3>
-        <ul id="recent-trips-list" class="trip-list" hidden>
+        <ul id="recent-trips-list" class="trip-list" hidden="until-found">
           <li><strong>Oct. 2026</strong> — Tucson, Arizona (2026 TBP National Convention)</li>
           <li><strong>Oct. 2026</strong> — Mackinac Island, Michigan</li>
           <li><strong>Aug. 2026</strong> — Traverse City, Michigan</li>
@@ -777,7 +778,10 @@
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <p>&copy; 2026 Michael Capitani · <a href="#top">Back to top</a></p>
+      <div class="footer-meta">
+        <p>&copy; 2026 Michael Capitani · <a href="#top">Back to top</a></p>
+        <p class="footer-submeta">Updated Nov. 2026<span id="local-time-wrap" hidden> · Ann Arbor, MI · <span id="local-time"></span></span></p>
+      </div>
       <div class="footer-duck-wrap">
         <span id="duck-msg" class="duck-msg" role="status" aria-live="polite" hidden>I luv snacs</span>
         <button type="button" id="duck-trigger" class="duck-trigger" aria-label="Tiny duck" aria-expanded="false">
@@ -790,14 +794,24 @@
   <dialog id="image-lightbox" class="lightbox" aria-modal="true" aria-label="Expanded image view">
     <div class="lightbox-inner">
       <button type="button" class="lightbox-close" aria-label="Close image preview">&times;</button>
-      <img id="lightbox-img" alt="" />
-      <p id="lightbox-caption" class="lightbox-caption"></p>
+      <div class="lightbox-stage">
+        <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous image" hidden>&#8249;</button>
+        <div class="lightbox-zoom-wrap">
+          <img id="lightbox-img" alt="" title="Click to zoom" />
+        </div>
+        <button type="button" class="lightbox-nav lightbox-next" aria-label="Next image" hidden>&#8250;</button>
+      </div>
+      <div class="lightbox-footer">
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+        <span id="lightbox-counter" class="lightbox-counter" hidden></span>
+      </div>
     </div>
   </dialog>
 
-  <script src="theme.js?v=3" defer></script>
+  <script src="theme.js?v=4" defer></script>
+  <script src="nav.js?v=2" defer></script>
   <script src="contact.js?v=3" defer></script>
-  <script src="expand.js?v=4" defer></script>
-  <script src="lightbox.js?v=3" defer></script>
+  <script src="expand.js?v=6" defer></script>
+  <script src="lightbox.js?v=5" defer></script>
 </body>
 </html>

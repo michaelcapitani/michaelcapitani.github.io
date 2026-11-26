@@ -24,23 +24,39 @@
     const isDark = getEffectiveTheme() === "dark";
     toggleBtn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
     toggleBtn.setAttribute("aria-pressed", String(isDark));
-    toggleBtn.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+    toggleBtn.title = isDark ? "Switch to light mode (D)" : "Switch to dark mode (D)";
+  };
+
+  const toggleTheme = () => {
+    const next = getEffectiveTheme() === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem(STORAGE_KEY, next);
+    } catch {
+      // Ignore storage errors in private browsing modes
+    }
+    syncButton();
   };
 
   syncButton();
 
   if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      const next = getEffectiveTheme() === "dark" ? "light" : "dark";
-      root.dataset.theme = next;
-      try {
-        localStorage.setItem(STORAGE_KEY, next);
-      } catch {
-        // Ignore storage errors in private browsing modes
-      }
-      syncButton();
-    });
+    toggleBtn.addEventListener("click", toggleTheme);
   }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.metaKey || event.ctrlKey || event.altKey) return;
+    if (event.key !== "d" && event.key !== "D") return;
+    const target = event.target;
+    if (
+      target &&
+      (target.isContentEditable ||
+        /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))
+    ) {
+      return;
+    }
+    toggleTheme();
+  });
 
   if (mediaQuery && typeof mediaQuery.addEventListener === "function") {
     mediaQuery.addEventListener("change", () => {
@@ -49,5 +65,13 @@
         syncButton();
       }
     });
+  }
+
+  if (typeof console !== "undefined" && typeof console.log === "function") {
+    console.log(
+      "%cHey! Thanks for poking around.",
+      "font-weight:700;font-size:13px;color:#6b4fa8;"
+    );
+    console.log("Plain HTML, CSS, and JS — zero frameworks. Press D anytime to flip light/dark mode.");
   }
 })();
