@@ -5,6 +5,8 @@
 
   if (!form || !statusEl || !submitBtn) return;
 
+  let isSubmitting = false;
+
   const setStatus = (message, state) => {
     statusEl.textContent = message;
     statusEl.className = "form-status" + (state ? " is-" + state : "");
@@ -12,22 +14,31 @@
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    if (isSubmitting) return;
 
-    const formData = new FormData(form);
-    const accessKey = (formData.get("access_key") || "").toString().trim();
-
-    if (!accessKey || accessKey === "YOUR_WEB3FORMS_ACCESS_KEY") {
-      setStatus(
-        "Contact form is not activated yet. Add your Web3Forms access key in index.html.",
-        "error"
-      );
+    const nameInput = form.elements.namedItem("name");
+    const messageInput = form.elements.namedItem("message");
+    if (nameInput && !nameInput.value.trim()) {
+      setStatus("Please enter your name before sending.", "error");
+      nameInput.focus();
+      return;
+    }
+    if (messageInput && !messageInput.value.trim()) {
+      setStatus("Please enter a message before sending.", "error");
+      messageInput.focus();
       return;
     }
 
+    const formData = new FormData(form);
     const originalLabel = submitBtn.textContent;
+    isSubmitting = true;
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending...";
+    form.setAttribute("aria-busy", "true");
     setStatus("Sending your message...", "pending");
+
+    const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const timeoutId = controller ? setTimeout(() => controller.abort(), 15000) : null;
 
     try {
       const response = await fetch(form.action, {
@@ -36,6 +47,7 @@
           Accept: "application/json",
         },
         body: formData,
+        signal: controller ? controller.signal : undefined,
       });
 
       const data = await response.json().catch(() => ({}));
@@ -45,18 +57,25 @@
         setStatus("Thanks! Your message has been sent.", "success");
       } else {
         setStatus(
-          data.message || "Something went wrong sending your message. Please try again.",
+          (data.message || "Something went wrong sending your message.") +
+            " Please try again or reach out on LinkedIn.",
           "error"
         );
       }
-    } catch {
+    } catch (err) {
+      const timedOut = err && err.name === "AbortError";
       setStatus(
-        "Network error. Please check your connection and try again, or reach out on LinkedIn.",
+        timedOut
+          ? "Request timed out. Please try again or reach out on LinkedIn."
+          : "Network error. Please check your connection and try again, or reach out on LinkedIn.",
         "error"
       );
     } finally {
+      if (timeoutId) clearTimeout(timeoutId);
+      isSubmitting = false;
       submitBtn.disabled = false;
       submitBtn.textContent = originalLabel;
+      form.removeAttribute("aria-busy");
     }
   });
 })();

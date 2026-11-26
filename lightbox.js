@@ -9,11 +9,14 @@
   }
 
   let lastTrigger = null;
+  let pointerDownOnBackdrop = false;
 
-  const openLightbox = (img) => {
-    lastTrigger = img;
+  const openLightbox = (img, trigger) => {
+    if (dialog.open) return;
+    lastTrigger = trigger || img;
     lightboxImg.src = img.currentSrc || img.src;
     lightboxImg.alt = img.alt || "";
+    lightboxImg.classList.toggle("media-diagram", img.classList.contains("media-diagram"));
     const figure = img.closest("figure");
     const figcaption = figure ? figure.querySelector("figcaption") : null;
     lightboxCaption.textContent = figcaption ? figcaption.textContent.trim() : img.alt || "";
@@ -21,33 +24,41 @@
     dialog.showModal();
   };
 
-  document.querySelectorAll(".media-item img").forEach((img) => {
-    img.tabIndex = 0;
-    img.setAttribute("role", "button");
-    img.setAttribute("aria-haspopup", "dialog");
-    img.addEventListener("click", () => openLightbox(img));
-    img.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openLightbox(img);
-      }
-    });
+  // Wrap gallery images in accessible native buttons so <img> keeps its semantics and keyboard focus ring
+  document.querySelectorAll(".media-item > img").forEach((img) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "media-trigger";
+    const figure = img.closest("figure");
+    const figcaption = figure ? figure.querySelector("figcaption") : null;
+    const labelText = figcaption ? figcaption.textContent.trim() : img.alt || "image";
+    btn.setAttribute("aria-label", "View larger image: " + labelText);
+    img.parentNode.insertBefore(btn, img);
+    btn.appendChild(img);
+    btn.addEventListener("click", () => openLightbox(img, btn));
   });
 
   if (closeBtn) {
     closeBtn.addEventListener("click", () => dialog.close());
   }
 
+  dialog.addEventListener("pointerdown", (event) => {
+    pointerDownOnBackdrop = event.target === dialog;
+  });
+
   dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) {
+    if (pointerDownOnBackdrop && event.target === dialog) {
       dialog.close();
     }
+    pointerDownOnBackdrop = false;
   });
 
   dialog.addEventListener("close", () => {
     lightboxImg.removeAttribute("src");
+    lightboxImg.classList.remove("media-diagram");
     if (lastTrigger && typeof lastTrigger.focus === "function") {
       lastTrigger.focus();
     }
+    lastTrigger = null;
   });
 })();
